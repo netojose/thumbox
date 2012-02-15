@@ -1,0 +1,29 @@
+Thumbox
+Testado no Mozilla Firefox Google Chrome, Opera, Safari, Internet Explorer (Funciona até no 6!*)
+Utiliza javascript não-obstrutivo (o conteúdo ainda é visualizado sem javascript)
+Exibição de galerias, múltiplas galerias ou imagens únicas
+Navegação da imagens via mini-galeria
+Exibição de descrição das imagens
+Efeitos para entrada e saída de imagens
+Navegação via teclado
+Navegação com a "roda" do mouse**
+
+Uso padrão
+$('#demo1').thumbox();
+
+Controlando quantidade de fotos, posição do dock e da descrição da imagem
+$('#demo2').thumbox({thumbs:4, dockPosition:'bottom', maxThumbWidth:50, labelPosition:'top'});
+
+Cor e velodidade do modal alterada e navegação por teclado desabilitada
+$('#demo3').thumbox({overlayColor:'#032', overlaySpeed:200, keyboardNavigation:false});
+
+Exibindo na página, apenas a primeira imagem, e mostrando o resto das imagens somente na galeria (Ideal para exibir uma galeria de galerias)
+$('#demo4').thumbox({showOne:true});
+
+Com efeitos de entrada e saída das fotos, e da rolagem do dock
+$('#demo5').thumbox({openImageEffect:'easeOutBack', closeImageEffect:'easeInBack'});
+
+Exibição de imagens sem a galeria (Quando o plugin encontra apenas uma imagem, ele a abre direto da página)
+$('.img-alone').thumbox({openImageEffect:'easeOutBack', closeImageEffect:'easeInBack'});
+
+Documentação completa e exemplos, no arquivo index.mtml
