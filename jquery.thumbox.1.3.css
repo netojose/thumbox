@@ -1,0 +1,119 @@
+/** 
+  * 
+  * Thumbox - plugin para galeria de imagens
+  *
+  *  @author     Jose Raimundo de Sousa Neto <sputinykster@gmail.com>
+  *  @version    1.3
+  *  @link       http://www.jneto.net.br
+  *  @since      1.0
+  *  
+  **/
+#thumbox-dock *, #thumbox-overlay, #thumbox-image, #thumbox-border, #thumbox-loader, #thumbox-close, #thumbox-buttonNext, #thumbox-buttonPrev, #thumbox-label{
+	margin:0;
+	padding:0;
+	border:0;
+}
+#thumbox-dock{
+	position:absolute;
+	z-index:9996;
+	background:#000;
+	top:-5000px;
+	left:-5000px
+}
+#thumbox-dock .thumbox-scrollerpages{
+	overflow:hidden;
+	float:left;
+	position: relative;
+}
+#thumbox-dock .thumbox-pages{
+	position:relative;
+	width:100%;
+	left:0;
+}
+#thumbox-dock .thumbox-page{
+	text-align:center;
+	float:left;
+}
+#thumbox-dock .thumbox-page img{
+	margin:10px;
+	cursor:pointer;
+	border:5px #333 solid;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+}
+#thumbox-dock .thumbox-arrowdock{
+	width:20px;
+	cursor:pointer;
+	float:left;
+	background:#333 no-repeat center center;
+}
+#thumbox-dock .thumbox-leftarrow{
+	background-image:url(thumbox-prev.png);
+}
+#thumbox-dock .thumbox-rightarrow{
+	background-image:url(thumbox-next.png);
+}
+#thumbox-overlay{
+	position:absolute;
+	z-index:9995;
+	top:0;
+	left:0;
+  	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  	filter: alpha(opacity=0);
+  	-moz-opacity: 0.0;
+  	-khtml-opacity: 0.0;
+  	opacity: 0.0;
+}
+.thumbox-hoverImage, .thumbox-currentImage{
+	border-color:#DDD !important;
+}
+#thumbox-image{
+	position:absolute;
+	z-index:9998;
+}
+#thumbox-border{
+	position:absolute;
+	z-index:9997;
+	background:#FFF;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+}
+#thumbox-loader{
+	position:absolute;
+	z-index:9999;
+	width:128px;
+	height:15px;
+	background:url(thumbox-loader.gif)
+}
+#thumbox-close{
+	position:absolute;
+	z-index:9999;
+	width:30px;
+	height:30px;
+	background:url(thumbox-close.png);
+	cursor:pointer;
+}
+#thumbox-buttonNext, #thumbox-buttonPrev{
+	width:41px;
+	height:66px;
+	position:absolute;
+	z-index:9999;
+	cursor:pointer;
+}
+#thumbox-buttonNext{
+	background:url(thumbox-nextImg.png);
+}
+#thumbox-buttonPrev{
+	background:url(thumbox-prevImg.png);
+}
+#thumbox-label{
+	background:url(thumbox-bgLabel.png);
+	position:absolute;
+	z-index:9999;
+	color:#FFF;
+	font-size:15px;
+	font-family:"Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+	padding:5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+}

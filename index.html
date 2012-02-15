@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Thumbox plugin</title>
+		<style type="text/css">
+			#tuto-thumbox li{display:inline;}
+			#tuto-thumbox li a img{margin:15px;border:none;}
+			#tuto-thumbox ul.features li{list-style:circle;display:list-item;margin-bottom:8px;font-family:Verdana;font-size:12px;}
+			#tuto-thumbox code{width:100%;border:solid 1px gray;display:block;padding:15px;background:#F0EFD1;text-shadow:1px 1px 0 #FFF;}
+			#tuto-thumbox table td, #tuto-thumbox table th, #tuto-thumbox table{border-collapse:collapse;border:solid 1px #DDD;padding:5px;color:#333;}
+			#tuto-thumbox table th{color:#000;background:#CCC;}
+			#tuto-thumbox table tr.odd{background:#DDD;}
+			#tuto-thumbox h2, #tuto-thumbox h3{font:italic bold 1.4em/1.5 Georgia,"Times New Roman",Times,serif}
+			#tuto-thumbox h2{font-size:18px;font-weight:normal;text-shadow:1px 1px 0 #DDD;}
+			#tuto-thumbox{width:960px;margin:0 auto;text-align:left;}
+			body{margin:0;padding:0;text-align:center;}
+		</style>
+		<link rel="stylesheet" type="text/css" href="jquery.thumbox.1.3.css" />
+		<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+        <script type="text/javascript" src="jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="jquery.thumbox.1.3.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#demo1').thumbox();
+				$('#demo2').thumbox({thumbs:4, dockPosition:'bottom', maxThumbWidth:50, labelPosition:'top'});
+				$('#demo3').thumbox({overlayColor:'#032', overlaySpeed:200, keyboardNavigation:false});
+				$('#demo4').thumbox({showOne:true});
+				$('#demo5').thumbox({thumbs:3, openImageEffect:'easeOutBack', closeImageEffect:'easeInBack', scrollDockEffect:'easeInOutBack'});
+				$('.img-alone').thumbox({openImageEffect:'easeOutBack', closeImageEffect:'easeInBack'});
+			})
+		</script>
+    </head>
+    <body>
+    	<div id="tuto-thumbox">
+    		<h2>Thumbox</h2>
+			<ul class="features">
+				<li>Testado no Mozilla Firefox Google Chrome, Opera, Safari, Internet Explorer (Funciona até no 6!*)</li>
+				<li>Utiliza javascript não-obstrutivo (o conteúdo ainda é visualizado sem javascript)</li>
+				<li>Exibição de galerias, múltiplas galerias ou imagens únicas</li>
+				<li>Navegação da imagens via mini-galeria</li>
+				<li>Exibição de descrição das imagens</li>
+				<li>Efeitos para entrada e saída de imagens</li>
+				<li>Navegação via teclado</li>
+				<li>Navegação com a "roda" do mouse**</li>
+			</ul>
+			
+    		<h2>Uso padrão</h2>
+			<code>$('#demo1').thumbox();</code>
+    		<ul id="demo1">
+    			<li><a href="img/b/1.jpg"><img src="img/t/1.jpg" alt="Descrição da imagem"></a></li>
+					<li><a href="img/b/2.jpg"><img src="img/t/2.jpg" alt="Descrição da imagem"></a></li>
+					<li><a href="img/b/3.jpg"><img src="img/t/3.jpg" alt="Descrição da imagem"></a></li>
+					<li><a href="img/b/4.jpg"><img src="img/t/4.jpg" alt="Descrição da imagem"></a></li>
+					<li><a href="img/b/5.jpg"><img src="img/t/5.jpg" alt="Descrição da imagem"></a></li>
+					<li><a href="img/b/6.jpg"><img src="img/t/6.jpg" alt="Descrição da imagem"></a></li>
+					<li><a href="img/b/7.jpg"><img src="img/t/7.jpg" alt="Descrição da imagem"></a></li>
+					<li><a href="img/b/8.jpg"><img src="img/t/8.jpg" alt="Descrição da imagem"></a></li>
+		        </ul>
+
+	        </ul>
+			
+			<h2>Controlando quantidade de fotos, posição do dock e da descrição da imagem</h2>
+			<code>$('#demo2').thumbox({thumbs:4, dockPosition:'bottom', maxThumbWidth:50, labelPosition:'top'});</code>
+			<ul id="demo2">
+				<li><a href="img/b/5.jpg"><img src="img/t/5.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/6.jpg"><img src="img/t/6.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/7.jpg"><img src="img/t/7.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/8.jpg"><img src="img/t/8.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/9.jpg"><img src="img/t/9.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/10.jpg"><img src="img/t/10.jpg" alt="Descrição da imagem"></a></li>
+	        </ul>
+			
+			<h2>Cor e velodidade do modal alterada e navegação por teclado desabilitada</h2>
+			<code>$('#demo3').thumbox({overlayColor:'#032', overlaySpeed:200, keyboardNavigation:false});</code>
+			<ul id="demo3">
+	        	<li><a href="img/b/8.jpg"><img src="img/t/8.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/9.jpg"><img src="img/t/9.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/10.jpg"><img src="img/t/10.jpg" alt="Descrição da imagem"></a></li>
+	        </ul>
+			
+			<h2>Exibindo na página, apenas a primeira imagem, e mostrando o resto das imagens somente na galeria</h2>
+			<p>Ideal para exibir uma galeria de galerias.</p>
+			<code>$('#demo4').thumbox({showOne:true});</code>
+			<ul id="demo4">
+				<li><a href="img/b/1.jpg"><img src="img/t/1.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/2.jpg"><img src="img/t/2.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/3.jpg"><img src="img/t/3.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/4.jpg"><img src="img/t/4.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/5.jpg"><img src="img/t/5.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/6.jpg"><img src="img/t/6.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/7.jpg"><img src="img/t/7.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/8.jpg"><img src="img/t/8.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/9.jpg"><img src="img/t/9.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/10.jpg"><img src="img/t/10.jpg" alt="Descrição da imagem"></a></li>
+	        </ul>
+			
+			<h2>Com efeitos de entrada e saída das fotos, e da rolagem do dock</h2>
+			<code>$('#demo5').thumbox({openImageEffect:'easeOutBack', closeImageEffect:'easeInBack'});</code>
+			
+			<ul id="demo5">
+				<li><a href="img/b/1.jpg"><img src="img/t/1.jpg" alt="Descrição da imagem"></a></li>			
+				<li><a href="img/b/2.jpg"><img src="img/t/2.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/3.jpg"><img src="img/t/3.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/4.jpg"><img src="img/t/4.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/5.jpg"><img src="img/t/5.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/6.jpg"><img src="img/t/6.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/7.jpg"><img src="img/t/7.jpg" alt="Descrição da imagem"></a></li>
+			</ul>
+			
+			<h2>Exibição de imagens sem a galeria</h2>
+			<p>Quando o plugin encontra apenas uma imagem, ele a abre direto da página</p>
+			<code>$('.img-alone').thumbox({openImageEffect:'easeOutBack', closeImageEffect:'easeInBack'});</code>
+			<ul>
+                <li><a href="img/b/1.jpg" class="img-alone"><img src="img/t/1.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/2.jpg" class="img-alone"><img src="img/t/2.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/3.jpg" class="img-alone"><img src="img/t/3.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/4.jpg" class="img-alone"><img src="img/t/4.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/5.jpg" class="img-alone"><img src="img/t/5.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/6.jpg" class="img-alone"><img src="img/t/6.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/7.jpg" class="img-alone"><img src="img/t/7.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/8.jpg" class="img-alone"><img src="img/t/8.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/9.jpg" class="img-alone"><img src="img/t/9.jpg" alt="Descrição da imagem"></a></li>
+				<li><a href="img/b/10.jpg" class="img-alone"><img src="img/t/10.jpg" alt="Descrição da imagem"></a></li>
+			</ul>
+			
+			<h2>Documentação</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Parâmetro</th>
+						<th>Descrição</th>
+						<th>Padrão</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>thumbs</td>
+						<td>Quantidade de miniaturas exibidas na galeria</td>
+						<td>5</td>
+					</tr>
+					<tr class="odd">
+						<td>overlayColor</td>
+						<td>Cor do modal</td>
+						<td>#999</td>
+					</tr>
+					<tr>
+						<td>overlayOpacity</td>
+						<td>Opacidade do modal (0.0 a 1.0)</td>
+						<td>0.8</td>
+					</tr>
+					<tr class="odd">
+						<td>overlaySpeed</td>
+						<td>Velocidade do surgimento e desaparecimento do modal (tempo em milisegundos)</td>
+						<td>500</td>
+					</tr>
+					<tr>
+						<td>scrollSpeed</td>
+						<td>Velocidade da páginação das galerias (tempo em milisegundos)</td>
+						<td>500</td>
+					</tr>
+					<tr class="odd">
+						<td>zoomSpeed</td>
+						<td>Velocidade do efeito de zoom das imagens (tempo em milisegundos)</td>
+						<td>250</td>
+					</tr>
+					<tr>
+						<td>showOne</td>
+						<td>Exibir apenas a primeira imagem na página (true/false)</td>
+						<td>false</td>
+					</tr>
+					<tr class="odd">
+						<td>keyboardNavigation</td>
+						<td>Ativar/desativar navegação do teclado (true/false)</td>
+						<td>true</td>
+					</tr>
+					<tr>
+						<td>showLabel</td>
+						<td>Exibir a descrição da imagem (true/false)</td>
+						<td>true</td>
+					</tr>
+					<tr class="odd">
+						<td>labelPosition</td>
+						<td>Posição da descrição da imagem (bottom/top)</td>
+						<td>bottom</td>
+					</tr>
+					
+					<tr>
+						<td>descAttr</td>
+						<td>Atributo da imagem que contém a descrição de imagem</td>
+						<td>alt</td>
+					</tr>
+					
+					<tr class="odd">
+						<td>dockPosition</td>
+						<td>Posição da galeria (top/bottom)</td>
+						<td>top</td>
+					</tr>
+					<tr>
+						<td>maxThumbWidth</td>
+						<td>Largura máxima de uma miniatura na galeria, para forçar seu redimensionamento. Colocar zero para não redimensionar (medida em pixels)</td>
+						<td>0</td>
+					</tr>
+					<tr class="odd">
+						<td>maxThumbHeight</td>
+						<td>Altura máxima de uma miniatura na galeria, para forçar seu redimensionamento. Colocar zero para não redimensionar (medida em pixels)</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>timeOut</td>
+						<td>Tempo máximo de espera pelo carregamento da imagem até o thumbox abortar o carregamento (em segundos)</td>
+						<td>15</td>
+					</tr>
+					<tr class="odd">
+						<td>wheelNavigation</td>
+						<td>Habilitar navegação com a "roda" do mouse* (true/false)</td>
+						<td>true</td>
+					</tr>
+					<tr>
+						<td>openImageEffect</td>
+						<td>Efeito ao exibir a imagem***</td>
+						<td>Linear</td>
+					</tr>
+					<tr class="odd">
+						<td>closeImageEffect</td>
+						<td>Efeito ao fechar a imagem***</td>
+						<td>linear</td>
+					</tr>
+					<tr>
+						<td>scrollDockEffect</td>
+						<td>Efeito ao rolar o dock***</td>
+						<td>linear</td>
+					</tr>
+					<tr class="odd">
+						<td>preventImgOverflow</td>
+						<td>Evita que a imagem grande seja exibida em um tamanho maior que o monitor do usuário</td>
+						<td>true</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<h2>Atenção:</h2>
+			<ul class="features">
+				<li>*  No internet explorer, as imagens dos botões perderão a transparência, pois o IE6 não acite PNG transparente. Você pode ignorar isso, ou trocar as imagens, ou <a href="http://jquery.andreaseberhard.de/pngFix/" target="_blank" />forçar a transparência com JS</a></li>
+				<li>** Este parâmetro será autmaticamente desabilitado para IE<8 ou Opera, por problemas de overflow</li>
+				<li>*** Para aplicar efeitos diferentes do linear, você precisa carregar o <a href="http://gsgd.co.uk/sandbox/jquery/easing/" target="_blank" />easing.js</a>. Efeitos disponíveis: easeInElastic, easeOutElastic, easeInOutElastic, easeInBack, easeOutBack, easeInOutBack, easeInBounce, easeOutBounce, easeInOutBounce, jswing, easeInQuad, easeOutQuad, easeInOutQuad, easeInCubic, easeOutCubic, easeInOutCubic, easeInQuart, easeOutQuart, easeInOutQuart, easeInQuint, easeOutQuint, easeInOutQuint, easeInSine, easeOutSine, easeInOutSine, easeInExpo, easeOutExpo, easeInOutExpo, easeInCirc, easeOutCirc, easeInOutCirc.</li>
+			</ul>
+			
+			<p>No caso de dúvidas, sugestões, o bugs, favor <a href="http://jneto.net.br/contato">entrar em contato</a>, terei prazer em dar o feedback</p>
+			
+			<h2>Changelog:</h2>
+			<ul class="features">
+				<li><strong>11/11/2010 (1.0)</strong> Lançamento da primeira versão do plugin</li>
+				<li><strong>13/11/2010 (1.1)</strong> Correção de bugs, possibilidade do usuário abortar o carregamento das imagens, implementação de efeitos, e timeout</li>
+				<li><strong>24/11/2010 (1.2)</strong> Correção de bugs ao exibir imagem única, inclusão do parâmetro "descAttr" e adaptação do código para funcionar em versõs anteriores do jQuery (1.3.2+)</li>
+				<li><strong>30/11/2010 (1.3)</strong> Inclusão do parâmetro "preventImgOverflow" e possibilitar o funcionamento mesmo que dentro do link existam outros elementos além da imagem</li>
+			</ul>
+    	</div>
+    </body>
+</html>
