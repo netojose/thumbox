@@ -26,4 +26,4 @@ $('#demo5').thumbox({openImageEffect:'easeOutBack', closeImageEffect:'easeInBack
 Exibição de imagens sem a galeria (Quando o plugin encontra apenas uma imagem, ele a abre direto da página)
 $('.img-alone').thumbox({openImageEffect:'easeOutBack', closeImageEffect:'easeInBack'});
 
-Documentação completa e exemplos, no arquivo index.mtml
+Documentação completa e exemplos, no arquivo index.html
